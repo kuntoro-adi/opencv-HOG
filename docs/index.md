@@ -1,3 +1,29 @@
+# [](#header-1)Background Story
+
+In Computer Vision or Image Analysis, it is useful to extract the feature of an image which characterize its representation. One notable method is Histogram of Oriented Gradient. Of course the best way to learn it is to read the paper ourself:
+
+> Dalal, Navneet, and Bill Triggs. "Histograms of oriented gradients for human detection." Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on. Vol. 1. IEEE, 2005.
+
+Here I would like to simplify the explanation by showing how this method works as shown in the following table
+
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)  | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+In image analysis, it's practically more effective to extract HOG feature in image patch with size 8x8 pixels for example. So, for a 80x80 pixels image, 10x10 blocks of patch are obtained. If we use HOG feature of 8 columns, the feature vector length is 10x10x8 = 800.  
+
+# [](#header-1)How The Code Works
+
+
+
+# [](#header-1)Usage
+
+
+
+
 ---
 layout: default
 ---

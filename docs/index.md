@@ -19,10 +19,17 @@ Here I would like to simplify the explanation by showing how this method works a
 | ![](rightup.jpg) | [0.93146431, 0.16637088, 2.6467803, 353.3457, 2.9128444, 0.15530944, 0.69803631, 0.16413297] |
 | ![](rightdown.jpg) | [0.4967041, 0.17154786, 0.38039207, 0.076218724, 3.0039086, 352.4584, 2.8777828, 0.088714607] |
 
+There are numerous tutorial to learn this method. I don't want to discuss in detail but let me give short explanation.
+
+We generated HOG feature with length of 8. Each column represent the cumulative value of magnitude for a given angle. So, if we have 8 dimension, each will represent 0, 45, 90, 135, 180, 225, 270, and 315 respectively. As an example, the image left.jpg has strong magnitude with directed to the right (0 degrees angle) and the image down.jpg has strong magnitude towards down direction (270 degrees angle). 
+
 In image analysis, it's practically more effective to extract HOG feature in image patch with size 8x8 pixels for example. So, for a 80x80 pixels image, 10x10 blocks of patch are obtained. If we use HOG feature of 8 columns, the feature vector length is 10x10x8 = 800.  
 
 # [](#header-1)How The Code Works
 
+To be added.
+
+The result returned by the function is not normalized. You may want to normalize using opencv ```normalize``` function as conveyed by literatures.
 
 
 # [](#header-1)Usage

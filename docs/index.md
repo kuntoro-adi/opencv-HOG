@@ -6,12 +6,18 @@ In Computer Vision or Image Analysis, it is useful to extract the feature of an 
 
 Here I would like to simplify the explanation by showing how this method works as shown in the following table
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)  | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+| Image        | HOG Representation (feature dim: 8)          |
+|:-------------|:------------------|
+| ![](left.jpg) | [255.99998, 0, 0, 0, 0, 0, 0, 0] |
+| ![](right.jpg) | [0, 0, 0, 0, 255.99998, 0, 0, 0]   |
+| ![](up.jpg) | [0, 0, 256.5, 0, 0, 0, 0.50195307, 0]     |
+| ![](down.jpg) | [0, 0, 0.50196081, 0, 0, 0, 256.50388, 0] |
+| ![](roundin.jpg) | [73.360161, 101.03394, 73.010605, 101.03346, 73.333313, 101.19398, 72.808472, 101.17259] |
+| ![](roundout.jpg) | [73.348228, 101.15427, 72.953636, 101.15828, 73.343178, 101.17075, 72.95192, 101.15411] |
+| ![](leftup.jpg) | [2.9128377, 353.34573, 2.6467891, 0.16636823, 0.93146539, 0.16413036, 0.69803721, 0.15530819] |
+| ![](leftdown.jpg) | [2.9991059, 0.076219894, 0.38040885, 0.17154631, 0.49668261, 0.088716142, 2.8825543, 352.45847] |
+| ![](rightup.jpg) | [0.93146431, 0.16637088, 2.6467803, 353.3457, 2.9128444, 0.15530944, 0.69803631, 0.16413297] |
+| ![](rightdown.jpg) | [0.4967041, 0.17154786, 0.38039207, 0.076218724, 3.0039086, 352.4584, 2.8777828, 0.088714607] |
 
 In image analysis, it's practically more effective to extract HOG feature in image patch with size 8x8 pixels for example. So, for a 80x80 pixels image, 10x10 blocks of patch are obtained. If we use HOG feature of 8 columns, the feature vector length is 10x10x8 = 800.  
 

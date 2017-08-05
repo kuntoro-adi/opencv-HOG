@@ -1,7 +1,9 @@
 #include "HOG.h"
 
 /// function to compute angle and magnitude image
-/// thanks to http://www.learnopencv.com/histogram-of-oriented-gradients/
+/// thanks to 
+/// http://www.learnopencv.com/histogram-of-oriented-gradients/
+/// Dalal, Navneet, and Bill Triggs. "Histograms of oriented gradients for human detection." Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on. Vol. 1. IEEE, 2005.
 void computeMagAngle(InputArray src, OutputArray mag, OutputArray ang)
 {
 	Mat img = src.getMat();
@@ -22,7 +24,9 @@ void computeMagAngle(InputArray src, OutputArray mag, OutputArray ang)
 
 
 /// function to compute histogram of oriented gradients feature
-/// thanks to http://www.learnopencv.com/histogram-of-oriented-gradients/
+/// thanks to 
+/// http://www.learnopencv.com/histogram-of-oriented-gradients/
+/// Dalal, Navneet, and Bill Triggs. "Histograms of oriented gradients for human detection." Computer Vision and Pattern Recognition, 2005. CVPR 2005. IEEE Computer Society Conference on. Vol. 1. IEEE, 2005.
 void computeHOG(InputArray mag, InputArray ang, OutputArray dst, int dims, bool isWeighted = true)
 {
 	/// init input values
@@ -56,10 +60,10 @@ void computeHOG(InputArray mag, InputArray ang, OutputArray dst, int dims, bool 
 		uplimits[i] = (2 * i + 1) * halfBin;
 		medbins[i] = i * binLength;
 
-		cout << "(" << medbins[i] << ") ";
-		cout << uplimits[i] << " ";
+		//cout << "(" << medbins[i] << ") ";
+		//cout << uplimits[i] << " ";
 	}
-	cout << endl;
+	//cout << endl;
 
 	/// begin calculate the feature vector
 	for (int i = 0; i < rows; i++)
@@ -142,11 +146,11 @@ void computeHOG(InputArray mag, InputArray ang, OutputArray dst, int dims, bool 
 				featureVec.at<float>(0, sideIdx) += sideValueToAdd;
 			}
 
-			cout << endl;
-			cout << "-angleVal " << angleVal << " -valueIdx " << valueIdx << " -sideIdx " << sideIdx << endl;
-			cout << "-binLength " << binLength << " -dif " << dif << " -prop " << prop << endl;
-			cout << "binLength - dif " << binLength - dif << " (binLength - dif) / binLength " << (binLength - dif) / binLength << endl;
-			cout << "-> " << featureVec << endl;
+			//cout << endl;
+			//cout << "-angleVal " << angleVal << " -valueIdx " << valueIdx << " -sideIdx " << sideIdx << endl;
+			//cout << "-binLength " << binLength << " -dif " << dif << " -prop " << prop << endl;
+			//cout << "binLength - dif " << binLength - dif << " (binLength - dif) / binLength " << (binLength - dif) / binLength << endl;
+			//cout << "-> " << featureVec << endl;
 		}
 	}
 
